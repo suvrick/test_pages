@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Document</title>
 </head>
 
@@ -15,13 +15,33 @@
     </h1>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                console.log(xhr.readyState)
-            }
-            xhr.open('GET', 'http://vk.com', true);
-            xhr.send(null);
+            performSignIn()
         })
+
+        function performSignIn() {
+
+            let headers = new Headers();
+
+            headers.append('Content-Type', 'application/json');
+            headers.append('Accept', 'application/json');
+
+            headers.append('Access-Control-Allow-Origin', 'http://31.28.27.201/data');
+            headers.append('Access-Control-Allow-Credentials', 'true');
+
+            headers.append('GET', 'POST', 'OPTIONS');
+
+            headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
+
+            fetch(sign_in, {
+                //mode: 'no-cors',
+                credentials: 'include',
+                method: 'POST',
+                headers: headers
+            })
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch(error => console.log('Authorization failed : ' + error.message));
+        }
     </script>
 </body>
 
