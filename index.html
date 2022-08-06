@@ -16,9 +16,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                    alert(xhr.responseText);
-                }
+                console.log(xhr.readyState)
             }
             xhr.open('GET', 'http://vk.com', true);
             xhr.send(null);
