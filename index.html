@@ -30,12 +30,12 @@
 
             headers.append('GET', 'POST', 'OPTIONS');
 
-            headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
+            //headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
 
-            fetch(sign_in, {
+            fetch("http://31.28.27.201/data", {
                 //mode: 'no-cors',
-                credentials: 'include',
-                method: 'POST',
+                //credentials: 'include',
+                method: 'GET',
                 headers: headers
             })
                 .then(response => response.json())
