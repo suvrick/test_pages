@@ -11,7 +11,7 @@
 
 <body>
     <h1 id="title">
-        Test Github Pages 444
+        Test Github Pages 555
     </h1>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -25,14 +25,14 @@
             headers.append('Content-Type', 'application/json');
             headers.append('Accept', 'application/json');
 
-            headers.append('Access-Control-Allow-Origin', 'http://31.28.27.201');
+            headers.append('Access-Control-Allow-Origin', 'https://31.28.27.201');
             //headers.append('Access-Control-Allow-Credentials', 'true');
 
             headers.append('GET', 'POST', 'OPTIONS');
 
             //headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
 
-            fetch("http://31.28.27.201/data", {
+            fetch("https://31.28.27.201/data", {
                 mode: 'no-cors',
                 //credentials: 'include',
                 method: 'GET',
