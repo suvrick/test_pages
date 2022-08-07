@@ -17,12 +17,13 @@
     <script>
         $.ajax({
             type: 'GET',
-            url: 'http://31.28.27.201/data?msg=www&code=1',
+            url: 'https://suvricksoft.ru/data?msg=www&code=1',
             crossDomain: true,
             dataType: 'json',
             withCredentials: false,
             success: function(responseData, textStatus, jqXHR) {
                         console.log(responseData);
+                        document.getElementById("title").innerText += ' ' + responseData
                     },
             error: function (responseData, textStatus, errorThrown) {
                         console.log(responseData, textStatus, errorThrown);
