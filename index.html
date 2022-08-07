@@ -13,7 +13,22 @@
     <h1 id="title">
         Test Github Pages 555
     </h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+        $.ajax({
+            type: 'GET',
+            url: 'https://31.28.27.201/data',
+            crossDomain: true,
+            dataType: 'json',
+            success: function(responseData, textStatus, jqXHR) {
+                        console.log(responseData);
+                    },
+            error: function (responseData, textStatus, errorThrown) {
+                        console.log('POST failed.');
+            }
+        });
+    </script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", () => {
             performSignIn()
         })
@@ -42,7 +57,7 @@
                 .then(json => console.log(json))
                 .catch(error => console.log('Authorization failed : ' + error.message));
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
