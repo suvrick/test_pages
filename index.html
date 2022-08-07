@@ -17,7 +17,7 @@
     <script>
         $.ajax({
             type: 'GET',
-            url: 'http://31.28.27.201/data',
+            url: 'https://31.28.27.201/data',
             crossDomain: true,
             dataType: 'json',
             withCredentials: false,
@@ -25,7 +25,7 @@
                         console.log(responseData);
                     },
             error: function (responseData, textStatus, errorThrown) {
-                        console.log('Request failed.');
+                        console.log(responseData, textStatus, errorThrown);
             }
         });
     </script>
